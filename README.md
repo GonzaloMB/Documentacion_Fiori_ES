@@ -17,8 +17,18 @@
 </div>
 
 # UI5 🚀
+Documentación recolectadas durante mis años trabajando como programador UI5.
+
+
 
 ## Operaciones CRUD oData
+Las operaciones CRUD son un acrónimo que representa las cuatro operaciones básicas que se pueden realizar en una base de datos o en cualquier sistema que maneje datos. CRUD significa:
+
+Create (Crear): se refiere a la operación de agregar un nuevo registro a la base de datos o sistema.
+* Read (Leer): se refiere a la operación de obtener información de un registro específico o de una lista de registros en la base de datos o sistema.
+* Update (Actualizar): se refiere a la operación de modificar un registro existente en la base de datos o sistema.
+* Delete (Eliminar): se refiere a la operación de eliminar un registro existente en la base de datos o sistema.
+Estas operaciones son esenciales para cualquier sistema que maneje datos y son ampliamente utilizadas en aplicaciones web, aplicaciones móviles, sistemas de gestión de bases de datos, entre otros.
 Ejemplos de cómo realizar operaciones CRUD con oData utilizando SAPUI5:
 
 ### Crear un registro:
@@ -38,7 +48,7 @@ oModel.create("/Usuarios", oEntry, {
 ```
 Este código crea un nuevo registro en el entityset "Usuarios" utilizando la función create del modelo oData.
 
-###Leer un registro:
+### Leer un registro:
 ```javascript
 oModel.read("/Usuarios('12345')", {
     success: function(oData){
@@ -52,7 +62,7 @@ oModel.read("/Usuarios('12345')", {
 ```
 Este código lee el registro con la clave "12345" del entityset "Usuarios" utilizando la función read del modelo oData.
 
-###Actualizar un registro:
+### Actualizar un registro:
 ```javascript
 var oEntry = {};
 oEntry.Nombre = "Jane";
@@ -69,7 +79,7 @@ oModel.update("/Usuarios('12345')", oEntry, {
 ```
 Este código actualiza el registro con la clave "12345" del entityset "Usuarios" utilizando la función update del modelo oData.
 
-###Eliminar un registro:
+### Eliminar un registro:
 ```javascript
 oModel.remove("/Usuarios('12345')", {
     success: function(){
