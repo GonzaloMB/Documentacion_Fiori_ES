@@ -95,6 +95,65 @@ Este código elimina el registro con la clave "12345" del entityset "Usuarios" u
 Estos son solo algunos ejemplos básicos de cómo realizar operaciones CRUD con oData utilizando SAPUI5. Por supuesto, la implementación real dependerá de la estructura del modelo y del entityset en particular.
 
 
+## Operaciones con modelos
+Ejemplos de algunas operaciones que se pueden realizar con modelos en SAPUI5:
+
+### getProperty 
+Esta operación se utiliza para obtener el valor de una propiedad específica de un modelo. Por ejemplo:
+```javascript
+var oModel = new sap.ui.model.json.JSONModel();
+oModel.setData({
+    name: "Juan",
+    age: 30
+});
+
+var sName = oModel.getProperty("/name");
+// sName tendrá el valor "Juan"
+```
+###  setProperty
+Esta operación se utiliza para establecer un nuevo valor para una propiedad específica de un modelo. Por ejemplo:
+```javascript
+var oModel = new sap.ui.model.json.JSONModel();
+oModel.setData({
+    name: "Juan",
+    age: 30
+});
+
+oModel.setProperty("/name", "Pedro");
+// La propiedad "name" del modelo ahora tendrá el valor "Pedro"
+```
+### createEntry
+Esta operación se utiliza para crear una nueva entrada en un modelo que está vinculado a una entidad de servicio OData. Por ejemplo:
+```javascript
+var oModel = new sap.ui.model.odata.v2.ODataModel("/odata/service");
+
+oModel.createEntry("/EntitySet", {
+    properties: {
+        name: "Juan",
+        age: 30
+    }
+});
+// Se creará una nueva entrada en la entidad "EntitySet" del servicio OData
+```
+###  submitChanges
+Esta operación se utiliza para enviar los cambios realizados en un modelo que está vinculado a una entidad de servicio OData al servidor. Por ejemplo:
+```javascript
+var oModel = new sap.ui.model.odata.v2.ODataModel("/odata/service");
+
+oModel.setProperty("/EntitySet('id')/name", "Pedro");
+
+oModel.submitChanges();
+// Se enviarán los cambios realizados en la propiedad "name" de la entrada con el ID "id" de la entidad "EntitySet" del servicio OData al servidor
+```
+### refresh
+Esta operación se utiliza para actualizar los datos de un modelo que está vinculado a una entidad de servicio OData. Por ejemplo:
+```javascript
+var oModel = new sap.ui.model.odata.v2.ODataModel("/odata/service");
+
+oModel.refresh();
+// Se actualizarán los datos del modelo desde el servidor
+```
+Estos son solo algunos ejemplos de las operaciones que se pueden realizar con modelos en SAPUI5. Existen muchas otras operaciones que pueden variar según el tipo de modelo y la entidad de servicio OData que se esté utilizando.
 
 
 # CAP CDS 
