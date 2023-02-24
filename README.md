@@ -16,7 +16,7 @@
   </h3>
 </div>
 
-# UI5 sap-icon://sap-ui5
+# UI5 📚
 Documentación recolectadas durante mis años trabajando como programador UI5.
 
 
