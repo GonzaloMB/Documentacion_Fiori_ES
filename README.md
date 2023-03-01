@@ -312,6 +312,46 @@ Las principales diferencias entre this.getView() y sap.ui.getCore() son:
 * this.getView() solo funciona en el contexto de un controlador de vista, mientras que sap.ui.getCore() se puede utilizar en cualquier parte de la aplicación UI5.
 
 En resumen, this.getView() y sap.ui.getCore() son dos funciones diferentes que se utilizan para acceder a objetos o componentes de la interfaz de usuario en una aplicación UI5. this.getView() se utiliza para acceder a la vista actual en la que se está trabajando, mientras que sap.ui.getCore() se utiliza para acceder a la instancia principal de la biblioteca UI5 y a los componentes principales de la biblioteca.
+## ¿Que son las "Expression Binding"?
+Una "Expression Binding" es un enlace de datos en SAPUI5 que permite enlazar un valor de una propiedad de un control con una expresión que se evalúa dinámicamente en tiempo de ejecución. Esto permite que el valor de la propiedad se actualice automáticamente en respuesta a cambios en otras propiedades o modelos de datos.
+
+La sintaxis para crear una expresión de enlace en SAPUI5 es la siguiente:
+
+```xml
+{= expression}
+```
+Donde "expression" puede ser cualquier expresión JavaScript válida. Por ejemplo, para enlazar el texto de un control Label con una propiedad "name" de un modelo de datos, se puede usar la siguiente expresión:
+
+```xml
+<Text text="{= ${myModel>/name} }" />
+```
+En este caso, el valor de la propiedad "text" del control Label se actualizará automáticamente cuando cambie la propiedad "name" del modelo de datos "myModel".
+
+A continuación, te daré algunos ejemplos de Expression Binding con operadores ternarios, funciones y otras expresiones JavaScript en SAPUI5:
+
+Usando el operador ternario para mostrar diferentes textos en función del valor de una propiedad:
+```xml
+<Text text="{= ${myModel>/age} >= 18 ? 'Eres mayor de edad' : 'Eres menor de edad' }" />
+```
+En este caso, el valor de la propiedad "text" del control Label mostrará diferentes textos en función de si el valor de la propiedad "age" del modelo de datos "myModel" es mayor o igual a 18.
+
+Usando una función para convertir un valor de un modelo de datos en otro valor para mostrar en un control:
+```xml
+<Text text="{= myFunction(${myModel>/value}) }" />
+
+function myFunction(value) {
+  return value * 2;
+}
+```
+En este caso, la función "myFunction" se define en el código JavaScript y se utiliza en la expresión de enlace de datos para convertir el valor de la propiedad "value" del modelo de datos "myModel" en otro valor que se mostrará en el control Label.
+
+Usando expresiones JavaScript para concatenar diferentes valores de propiedades:
+```xml
+<Text text="{= 'Bienvenido, ' + ${myModel>/name} + ' ' + ${myModel>/surname} }" />
+```
+En este caso, la expresión de enlace de datos utiliza el operador "+" para concatenar diferentes valores de las propiedades "name" y "surname" del modelo de datos "myModel" y mostrarlos en el control Label..
+
+En resumen, una "Expression Binding" en SAPUI5 es una forma poderosa y flexible de enlazar dinámicamente los valores de las propiedades de los controles con expresiones JavaScript que pueden evaluar y modificar datos en tiempo de ejecución.
 
 
 ⌨️ with ❤️ love [GonzaloMB](https://github.com/GonzaloMB) 😊
