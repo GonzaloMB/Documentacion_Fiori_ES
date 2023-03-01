@@ -162,7 +162,8 @@ var oModel = new sap.ui.model.odata.v2.ODataModel("/odata/service");
 oModel.setProperty("/EntitySet('id')/name", "Pedro");
 
 oModel.submitChanges();
-// Se enviarán los cambios realizados en la propiedad "name" de la entrada con el ID "id" de la entidad "EntitySet" del servicio OData al servidor
+//Se envian Los cambios realizados en la propiedad "name" de la entrada con el ID "id" 
+//de la entidad "EntitySet" del servicio OData al servidor
 ```
 ### refresh
 Esta operación se utiliza para actualizar los datos de un modelo que está vinculado a una entidad de servicio OData. Por ejemplo:
