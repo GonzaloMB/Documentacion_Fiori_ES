@@ -296,5 +296,23 @@ oRouter.navTo("detail", {
 En este ejemplo, se navega a la vista "Detail" con el parámetro "id" igual a "1234". Este valor se pasará como parte de la URL y se utilizará en el controlador de la vista "Detail" para mostrar los datos correspondientes.
 
 
+## "this.getView()" Vs. "sap.ui.getCore()"
+En el contexto de una aplicación UI5, this.getView() y sap.ui.getCore() son dos funciones diferentes que se utilizan para acceder a objetos o componentes de la interfaz de usuario.
+
+this.getView() es una función que se utiliza en un controlador de vista UI5 para obtener una referencia a la vista actual en la que se está trabajando. Esta función devuelve un objeto que representa la vista actual y que se puede utilizar para acceder a los controles y componentes de la vista. Por ejemplo, se puede utilizar this.getView().byId("myButton") para obtener una referencia al botón con el ID "myButton" en la vista actual.
+
+Por otro lado, sap.ui.getCore() es una función que se utiliza para acceder a la instancia principal de la biblioteca UI5. Esta función devuelve un objeto que representa la instancia principal de la biblioteca UI5 y que se puede utilizar para acceder a los componentes principales de la biblioteca. Por ejemplo, se puede utilizar sap.ui.getCore().byId("myButton") para obtener una referencia al botón con el ID "myButton" en cualquier vista o componente de la aplicación.
+
+Las principales diferencias entre this.getView() y sap.ui.getCore() son:
+
+this.getView() se utiliza para acceder a la vista actual en la que se está trabajando, mientras que sap.ui.getCore() se utiliza para acceder a la instancia principal de la biblioteca UI5.
+
+this.getView() devuelve un objeto que representa la vista actual y que se puede utilizar para acceder a los controles y componentes de la vista, mientras que sap.ui.getCore() devuelve un objeto que representa la instancia principal de la biblioteca UI5 y que se puede utilizar para acceder a los componentes principales de la biblioteca.
+
+this.getView() solo funciona en el contexto de un controlador de vista, mientras que sap.ui.getCore() se puede utilizar en cualquier parte de la aplicación UI5.
+
+En resumen, this.getView() y sap.ui.getCore() son dos funciones diferentes que se utilizan para acceder a objetos o componentes de la interfaz de usuario en una aplicación UI5. this.getView() se utiliza para acceder a la vista actual en la que se está trabajando, mientras que sap.ui.getCore() se utiliza para acceder a la instancia principal de la biblioteca UI5 y a los componentes principales de la biblioteca.
+
+
 ⌨️ with ❤️ love [GonzaloMB](https://github.com/GonzaloMB) 😊
 
