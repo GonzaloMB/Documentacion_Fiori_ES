@@ -412,6 +412,97 @@ var oModel = this.getModel();
 ```
 Este método devuelve el modelo asignado al componente y lo hace accesible desde cualquier parte de la aplicación.
 
+## SmartControls
+
+Los Smart Controls en SAPUI5 son controles inteligentes que facilitan el desarrollo de aplicaciones web empresariales. Los Smart Controls utilizan la lógica de negocio integrada para proporcionar una experiencia de usuario más intuitiva y fluida. Estos controles están disponibles en la biblioteca de control SAP Fiori y son ampliamente utilizados en aplicaciones empresariales de SAP. Algunos ejemplos de Smart Controls son:
+
+* Smart Filter: Este control se utiliza para filtrar y buscar datos en un List Report. El Smart Filter se integra automáticamente con el modelo de datos y utiliza las anotaciones de CDS para crear automáticamente los filtros relevantes.
+
+* Smart Table: Este control se utiliza para mostrar datos en una tabla. El Smart Table se integra automáticamente con el modelo de datos y utiliza las anotaciones de CDS para crear automáticamente las columnas relevantes y los controles de entrada de datos.
+
+* Smart Form: Este control se utiliza para crear formularios de entrada de datos. El Smart Form se integra automáticamente con el modelo de datos y utiliza las anotaciones de CDS para crear automáticamente los campos relevantes y los controles de entrada de datos.
+
+* Smart Chart: Este control se utiliza para visualizar datos en un gráfico. El Smart Chart se integra automáticamente con el modelo de datos y utiliza las anotaciones de CDS para crear automáticamente los datos relevantes y los tipos de gráfico.
+
+* Smart Link: Este control se utiliza para crear enlaces inteligentes que permiten a los usuarios navegar a través de la aplicación de forma intuitiva. El Smart Link se integra automáticamente con el modelo de datos y utiliza las anotaciones de CDS para crear automáticamente los enlaces relevantes.
+
+Aquí hay un ejemplo de código que utiliza los Smart Controls de UI5:
+
+```xml
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+          xmlns:smartTable="sap.ui.comp.smarttable"
+          xmlns:smartForm="sap.ui.comp.smartform"
+          xmlns:smartChart="sap.ui.comp.smartchart"
+          xmlns:smartLink="sap.ui.comp.smartlink"
+          controllerName="myApp.controller.Main">
+ 
+  <smartFilterBar:SmartFilterBar id="smartFilterBar"
+                                 entityType="myEntity"
+                                 basicSearchFieldName="myField">
+    <smartFilterBar:controlConfiguration>
+      <smartFilterBar:ControlConfiguration key="myField"
+                                           label="My Field"
+                                           visibleInAdvancedArea="true"/>
+    </smartFilterBar:controlConfiguration>
+    <smartFilterBar:filterGroupItems>
+      <smartFilterBar:FilterGroupItem groupName="Group 1" name="myField"/>
+    </smartFilterBar:filterGroupItems>
+  </smartFilterBar:SmartFilterBar>
+ 
+  <smartTable:SmartTable id="smartTable"
+                         entitySet="myEntity"
+                         tableType="ResponsiveTable"
+                         useVariantManagement="false"
+                         useTablePersonalisation="true">
+    <smartTable:toolbar>
+      <OverflowToolbar>
+        <Button icon="sap-icon://add" press="onAddPress"/>
+        <Button icon="sap-icon://delete" press="onDeletePress"/>
+      </OverflowToolbar>
+    </smartTable:toolbar>
+    <smartTable:customToolbar>
+      <OverflowToolbar>
+        <Button icon="sap-icon://add" press="onAddPress"/>
+        <Button icon="sap-icon://delete" press="onDeletePress"/>
+      </OverflowToolbar>
+    </smartTable:customToolbar>
+  </smartTable:SmartTable>
+ 
+  <smartForm:SmartForm id="smartForm"
+                       editable="true"
+                       entitySet="myEntity"
+                       expandNavigationProperties="true"
+                       useHorizontalLayout="true"
+                       useVerticalLayout="false"
+                       useResponsiveLayout="true"
+                       title="My Form">
+    <smartForm:Group>
+      <smartForm:GroupElement label="My Field">
+        <smartField:SmartField value="{myField}"/>
+      </smartForm:GroupElement>
+    </smartForm:Group>
+  </smartForm:SmartForm>
+ 
+  <smartChart:SmartChart id="smartChart"
+                         entitySet="myEntity"
+                         chartType="Column">
+    <smartChart:toolbar>
+      <OverflowToolbar>
+        <Button icon="sap-icon://add" press="onAddPress"/>
+        <Button icon="sap-icon://delete" press="onDeletePress"/>
+      </OverflowToolbar>
+    </smartChart:toolbar>
+  </smartChart:SmartChart>
+ 
+  <smartLink:SmartLink id="smartLink"
+                       semanticObject="myObject"
+                       action="myAction"
+                       text="{i18n>myLinkText}"
+                       href="{path: 'myLinkHref', formatter: '.formatMyLinkHref'}"/>
+ 
+</mvc:View>
+```
 
 ⌨️ with ❤️ love [GonzaloMB](https://github.com/GonzaloMB) 😊
 
