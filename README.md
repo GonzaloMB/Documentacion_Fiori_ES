@@ -154,6 +154,126 @@ oModel.refresh();
 // Se actualizarán los datos del modelo desde el servidor
 ```
 Estos son solo algunos ejemplos de las operaciones que se pueden realizar con modelos en SAPUI5. Existen muchas otras operaciones que pueden variar según el tipo de modelo y la entidad de servicio OData que se esté utilizando.
+## Navegación entre vistas
+
+La navegación entre vistas en SAPUI5 se refiere a la capacidad de cambiar dinámicamente entre diferentes vistas o pantallas en una aplicación web. En SAPUI5, se pueden crear diferentes vistas utilizando diferentes tecnologías como XML, JavaScript o JSON.
+La navegación entre vistas en SAPUI5 se puede implementar utilizando enrutamiento (routing). En el enrutamiento, se utiliza una configuración de rutas (routes) y targets que mapean la URL de la aplicación a la vista correspondiente. Cuando se navega a una ruta en particular, el enrutador (router) carga la vista correspondiente y la muestra en la pantalla.
+### Navegación sin parametros
+
+Para navegar entre vistas en SAPUI5 con enrutamiento (routing) sin parámetros, puedes seguir los siguientes pasos:
+En primer lugar, debes definir el enrutamiento en el archivo manifest.json de tu proyecto. Aquí es donde se define la ruta que se utilizará para navegar entre vistas. Por ejemplo:
+```json
+"routing": {
+  "config": {
+    "routerClass": "sap.m.routing.Router",
+    "viewType": "XML",
+    "viewPath": "myapp.view",
+    "controlId": "app",
+    "controlAggregation": "pages",
+    "async": true,
+    "routes": [
+      {
+        "name": "home",
+        "pattern": "",
+        "target": "home"
+      },
+      {
+        "name": "about",
+        "pattern": "about",
+        "target": "about"
+      }
+    ],
+    "targets": {
+      "home": {
+        "viewName": "Home",
+        "viewLevel": 1,
+        "viewId": "home"
+      },
+      "about": {
+        "viewName": "About",
+        "viewLevel": 1,
+        "viewId": "about"
+      }
+    }
+  }
+}
+```
+En este ejemplo, se definen dos rutas, una para la vista "Home" y otra para la vista "About". La ruta "home" utiliza un patrón vacío, lo que significa que será la vista principal de la aplicación, mientras que la ruta "about" utiliza el patrón "about".
+
+A continuación, debes crear las vistas correspondientes y sus controladores. En este ejemplo, se tienen las vistas "Home" y "About".
+
+Finalmente, para navegar entre las vistas utilizando el enrutador, puedes utilizar la función navTo.
+
+```javascript
+var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+oRouter.navTo("about");
+```
+En este ejemplo, se navega a la vista "About" utilizando el nombre de la ruta "about". También se puede navegar a la vista "Home" utilizando el nombre de la ruta "home". En ambos casos, el enrutador cargará la vista correspondiente y la mostrará en la pantalla.
+
+### Navegación con parametros
+Para navegar de una vista a otra en SAPUI5 con parámetros, puedes usar el enrutamiento o routing. El enrutamiento es un mecanismo que permite la navegación entre vistas y controladores en SAPUI5.
+
+Para utilizar el enrutamiento con parámetros, debes seguir los siguientes pasos:
+
+En primer lugar, debes definir el enrutamiento en el archivo manifest.json de tu proyecto. Aquí es donde se define la ruta que se utilizará para navegar entre vistas. Por ejemplo:
+```json
+"routing": {
+  "config": {
+    "routerClass": "sap.m.routing.Router",
+    "viewType": "XML",
+    "viewPath": "myapp.view",
+    "controlId": "app",
+    "controlAggregation": "pages",
+    "async": true,
+    "routes": [
+      {
+        "name": "detail",
+        "pattern": "detail/{id}",
+        "target": "detail"
+      }
+    ],
+    "targets": {
+      "detail": {
+        "viewName": "Detail",
+        "viewLevel": 2,
+        "viewId": "detail",
+        "viewData": {
+          "myParam": "{id}"
+        }
+      }
+    }
+  }
+}
+```
+En este ejemplo, se define una ruta llamada "detail" que utiliza el patrón "detail/{id}". El parámetro "id" se pasa como parte de la URL y se utilizará para mostrar datos específicos en la vista "Detail".
+
+A continuación, debes crear la vista "Detail" y su controlador correspondiente. En el controlador, puedes obtener el parámetro "id" utilizando la función this.getOwnerComponent().getComponentData().myParam.
+
+```javascript
+sap.ui.define([
+  "sap/ui/core/mvc/Controller"
+], function(Controller) {
+  "use strict";
+
+  return Controller.extend("myapp.view.Detail", {
+
+    onInit: function() {
+      var id = this.getOwnerComponent().getComponentData().myParam;
+      // utilizar el parámetro "id" para mostrar los datos correspondientes
+    }
+
+  });
+
+});
+```
+Finalmente, para navegar a la vista "Detail" con el parámetro "id", puedes utilizar la función navTo del enrutador.
+```javascript
+var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+oRouter.navTo("detail", {
+  id: "1234"
+});
+```
+En este ejemplo, se navega a la vista "Detail" con el parámetro "id" igual a "1234". Este valor se pasará como parte de la URL y se utilizará en el controlador de la vista "Detail" para mostrar los datos correspondientes.
 
 
 # CAP CDS 
