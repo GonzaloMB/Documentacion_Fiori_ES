@@ -16,9 +16,28 @@
   </h3>
 </div>
 
-# UI5 📚
+# FIORI | UI5 | ABAP CDS | CAP CDS 📚
 Documentación recolectadas durante mis años trabajando como programador UI5.
 
+##Diferencias entre SAPUI5 y FIORI
+
+UI5 y Fiori son dos tecnologías diferentes, pero que están estrechamente relacionadas en el ecosistema de SAP.
+
+UI5 es una biblioteca de interfaz de usuario basada en JavaScript que se utiliza para desarrollar aplicaciones web para el entorno SAP. Esta biblioteca proporciona un conjunto de controles y componentes que se pueden utilizar para crear interfaces de usuario modernas y responsivas que se ejecutan en un navegador web. UI5 se utiliza principalmente para desarrollar aplicaciones que se ejecutan en la nube o en un servidor.
+
+Por otro lado, Fiori es una plataforma de diseño y desarrollo de aplicaciones móviles y web para SAP. Fiori se basa en UI5, pero también incluye otros componentes como el servidor de aplicaciones SAP Gateway, que permite acceder a los datos de SAP, y el servidor de autenticación SAP Identity Management. Fiori proporciona un conjunto de plantillas y patrones de diseño que se pueden utilizar para crear aplicaciones móviles y web que sean consistentes con la marca y la experiencia de usuario de SAP.
+
+Las principales diferencias entre UI5 y Fiori son:
+
+*UI5 se utiliza para desarrollar aplicaciones web para el entorno SAP, mientras que Fiori se utiliza para diseñar y desarrollar aplicaciones móviles y web para SAP.
+
+*UI5 es una biblioteca de interfaz de usuario basada en JavaScript, mientras que Fiori es una plataforma de diseño y desarrollo que incluye otros componentes además de UI5.
+
+*UI5 proporciona un conjunto de controles y componentes para crear interfaces de usuario, mientras que Fiori proporciona patrones de diseño y plantillas para crear aplicaciones móviles y web.
+
+*UI5 se ejecuta en un navegador web, mientras que Fiori puede ejecutarse en una variedad de plataformas, incluyendo navegadores web, dispositivos móviles y aplicaciones de escritorio.
+
+En resumen, UI5 y Fiori son tecnologías diferentes pero complementarias. UI5 se utiliza para desarrollar aplicaciones web para el entorno SAP, mientras que Fiori se utiliza para diseñar y desarrollar aplicaciones móviles y web que sean consistentes con la marca y la experiencia de usuario de SAP. Ambas tecnologías son importantes en el ecosistema de SAP y se utilizan en conjunto para proporcionar una experiencia de usuario coherente y moderna en todas las plataformas.
 
 
 ## Operaciones CRUD oData
@@ -274,14 +293,6 @@ oRouter.navTo("detail", {
 });
 ```
 En este ejemplo, se navega a la vista "Detail" con el parámetro "id" igual a "1234". Este valor se pasará como parte de la URL y se utilizará en el controlador de la vista "Detail" para mostrar los datos correspondientes.
-
-
-# CAP CDS 
-
-# FIORI ELEMENTS 
-
-# ABAP CDS 
-
 
 
 ⌨️ with ❤️ love [GonzaloMB](https://github.com/GonzaloMB) 😊
