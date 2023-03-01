@@ -353,6 +353,65 @@ En este caso, la expresión de enlace de datos utiliza el operador "+" para conc
 
 En resumen, una "Expression Binding" en SAPUI5 es una forma poderosa y flexible de enlazar dinámicamente los valores de las propiedades de los controles con expresiones JavaScript que pueden evaluar y modificar datos en tiempo de ejecución.
 
+## Diferencias entre instanciar un Model en la vista o en el core
+En SAPUI5, un modelo de datos es una fuente de datos que se puede enlazar a los controles de la interfaz de usuario. Hay dos formas de instanciar un modelo de datos en SAPUI5: en la vista o en el core.
+
+La principal diferencia entre instanciar un modelo de datos en la vista o en el core es que, al instanciarlo en el core, el modelo se puede compartir entre varias vistas y componentes. Esto puede ser útil en situaciones donde se necesita compartir datos entre diferentes partes de una aplicación.
+
+A continuación, se presentan algunas de las diferencias más importantes entre instanciar un modelo en la vista o en el core:
+
+* Instanciar un modelo en la vista significa que el modelo solo se puede utilizar en esa vista, mientras que instanciarlo en el core significa que se puede utilizar en toda la aplicación.
+
+* Cuando se instancia un modelo en la vista, la vista es responsable de crear y gestionar el modelo. Cuando se instancia en el core, el modelo se crea y gestiona en un componente de nivel superior, que es responsable de compartir el modelo con otras partes de la aplicación.
+
+* Al instanciar un modelo en la vista, es posible que se creen varias instancias del mismo modelo en diferentes vistas, lo que puede llevar a la duplicación de datos y al aumento del uso de memoria. Al instanciar en el core, se evita la duplicación de instancias de modelo y se reduce el uso de memoria.
+
+* Si se instancia un modelo en el core, es posible que se deba pasar el modelo a las vistas a través de los parámetros de navegación. Esto puede hacer que el código sea más complejo y difícil de mantener.
+
+En resumen, instanciar un modelo en la vista es más adecuado para aplicaciones pequeñas y simples, mientras que instanciar en el core es más adecuado para aplicaciones más grandes y complejas que requieren compartir datos entre diferentes partes de la aplicación
+
+Instanciar un modelo en la vista:
+```javascript
+// En la vista
+onInit: function() {
+  // Crear un modelo JSON
+  var oModel = new JSONModel({
+    name: "John",
+    surname: "Doe",
+    age: 30
+  });
+  
+  // Asignar el modelo a la vista
+  this.getView().setModel(oModel);
+}
+```
+En este ejemplo, se instancia un modelo JSON en la vista "onInit" utilizando el constructor "JSONModel" y se asigna a la vista utilizando el método "setModel" de la vista.
+
+Instanciar un modelo en el core:
+```javascript
+// En el componente
+init: function() {
+  // Crear un modelo JSON
+  var oModel = new JSONModel({
+    name: "John",
+    surname: "Doe",
+    age: 30
+  });
+  
+  // Asignar el modelo al componente
+  this.setModel(oModel);
+}
+```
+En este ejemplo, se instancia un modelo JSON en el componente "init" utilizando el constructor "JSONModel" y se asigna al componente utilizando el método "setModel" del componente.
+
+Una vez que se ha instanciado el modelo en el componente, se puede acceder al modelo desde cualquier vista o control en la aplicación utilizando el método "getModel" de la vista o el control:
+
+```javascript
+// En una vista o control
+var oModel = this.getModel();
+```
+Este método devuelve el modelo asignado al componente y lo hace accesible desde cualquier parte de la aplicación.
+
 
 ⌨️ with ❤️ love [GonzaloMB](https://github.com/GonzaloMB) 😊
 
