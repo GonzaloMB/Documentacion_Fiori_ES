@@ -21,6 +21,7 @@ Documentación recolectadas durante mis años trabajando como programador UI5.
 
 ## Índice
 * [Diferencias entre SAPUI5 y FIORI](https://github.com/GonzaloMB/Documentacion_Fiori_ES/blob/main/README.md#diferencias-entre-sapui5-y-fiori)
+* [Roadmap para aprender SAP UI5](https://github.com/GonzaloMB/Documentacion_Fiori_ES/blob/main/README.md#roadmap-para-aprender-sap-ui5)
 * [Conectar cuenta SAP BAS a mi GitHub.](https://github.com/GonzaloMB/Documentacion_Fiori_ES/blob/main/README.md#conectar-cuenta-sap-bas-a-mi-github)
 * [Operaciones CRUD oData](https://github.com/GonzaloMB/Documentacion_Fiori_ES/blob/main/README.md#operaciones-crud-odata)
 * [Operaciones con modelos](https://github.com/GonzaloMB/Documentacion_Fiori_ES/blob/main/README.md#operaciones-con-modelos)
@@ -49,6 +50,28 @@ Las principales diferencias entre UI5 y Fiori son:
 * UI5 se ejecuta en un navegador web, mientras que Fiori puede ejecutarse en una variedad de plataformas, incluyendo navegadores web, dispositivos móviles y aplicaciones de escritorio.
 
 En resumen, UI5 y Fiori son tecnologías diferentes pero complementarias. UI5 se utiliza para desarrollar aplicaciones web para el entorno SAP, mientras que Fiori se utiliza para diseñar y desarrollar aplicaciones móviles y web que sean consistentes con la marca y la experiencia de usuario de SAP. Ambas tecnologías son importantes en el ecosistema de SAP y se utilizan en conjunto para proporcionar una experiencia de usuario coherente y moderna en todas las plataformas.
+
+## Roadmap para aprender SAP UI5: 
+
+1. **Fundamentos de SAP UI5:** Comienza por aprender los fundamentos de SAP UI5, como la arquitectura, la estructura de archivos, los conceptos de MVC (Model-View-Controller), la vinculación de datos y la estructura de control de la página. Puedes encontrar información detallada sobre estos temas en la documentación oficial de SAP UI5.
+
+2. **Desarrollo de aplicaciones simples:** Una vez que hayas aprendido los fundamentos, comienza a desarrollar aplicaciones simples en SAP UI5. Comienza por desarrollar aplicaciones de listas y detalles simples y avanza gradualmente hacia aplicaciones más complejas.
+
+3. **Controles de interfaz de usuario:** Familiarízate con los controles de interfaz de usuario disponibles en SAP UI5. Estos incluyen controles básicos como botones, campos de entrada y tablas, así como controles avanzados como gráficos y diagramas de Gantt.
+
+4. **Enrutamiento y navegación:** Aprende a utilizar el enrutamiento y la navegación en SAP UI5. Esto te permitirá crear aplicaciones con múltiples páginas y secciones.
+
+5. **Integración de servicios OData:** Aprende a integrar servicios OData en tus aplicaciones SAP UI5. Esto te permitirá acceder a datos externos y utilizarlos en tus aplicaciones.
+
+6. **Personalización de temas:** Aprende a personalizar el aspecto y la sensación de tus aplicaciones SAP UI5 utilizando temas personalizados.
+
+7. **Pruebas y depuración:** Aprende a probar y depurar tus aplicaciones SAP UI5 para asegurarte de que funcionen correctamente.
+
+8. **Integración con SAP Fiori:** Aprende a integrar tus aplicaciones SAP UI5 con SAP Fiori. Esto te permitirá utilizar tus aplicaciones en el contexto del marco de diseño de SAP Fiori.
+
+9. **Desarrollo avanzado:** Aprende a utilizar las características avanzadas de SAP UI5, como el enlace avanzado de datos, la modularización de código y la internacionalización.
+
+Espero que este roadmap te ayude a empezar a aprender SAP UI5. ¡Buena suerte!
 
 ## Conectar cuenta SAP BAS a mi GitHub.
 Para conectar tu sistema SAP BAS a tu cuenta de GitHub, puedes seguir los siguientes pasos:
