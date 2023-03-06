@@ -1,4 +1,4 @@
-ccccccc<h1 align="center">DOCUMENTACIÓN FIORI 🖥️ </h1>
+<h1 align="center">DOCUMENTACIÓN FIORI 🖥️ </h1>
 
 <div align="center">
  Repositorio de documentación Fiori, UI5, Fiori Elements, CDS.
