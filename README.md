@@ -1,4 +1,4 @@
-<h1 align="center">DOCUMENTACIÓN FIORI 🖥️ </h1>
+ccccccc<h1 align="center">DOCUMENTACIÓN FIORI 🖥️ </h1>
 
 <div align="center">
  Repositorio de documentación Fiori, UI5, Fiori Elements, CDS.
@@ -39,6 +39,31 @@ Las principales diferencias entre UI5 y Fiori son:
 
 En resumen, UI5 y Fiori son tecnologías diferentes pero complementarias. UI5 se utiliza para desarrollar aplicaciones web para el entorno SAP, mientras que Fiori se utiliza para diseñar y desarrollar aplicaciones móviles y web que sean consistentes con la marca y la experiencia de usuario de SAP. Ambas tecnologías son importantes en el ecosistema de SAP y se utilizan en conjunto para proporcionar una experiencia de usuario coherente y moderna en todas las plataformas.
 
+## Conectar cuenta SAP BAS a mi GitHub.
+Para conectar tu sistema SAP BAS a tu cuenta de GitHub, puedes seguir los siguientes pasos:
+
+* Abre una terminal en tu sistema SAP BAS y asegúrate de tener instalado Git en tu sistema. Puedes verificarlo escribiendo el comando git --version.
+* Crea una nueva clave SSH en tu sistema SAP BAS con el siguiente comando:
+```console
+ssh-keygen -t rsa -b 4096 -C "tu_email@ejemplo.com"
+```
+Esto creará una clave SSH pública y privada en tu sistema. Asegúrate de no agregar una contraseña para la clave, ya que esto dificultaría la conexión.
+* Copia la clave SSH pública generada con el siguiente comando:
+```console
+cat ~/.ssh/id_rsa.pub
+```
+Este comando imprimirá la clave SSH en la pantalla. Copia toda la clave SSH (incluyendo "ssh-rsa" al inicio) en tu portapapeles.
+* Accede a tu cuenta de GitHub y haz clic en tu foto de perfil en la esquina superior derecha y selecciona "Settings".
+* En la barra lateral izquierda, selecciona "SSH and GPG keys" y haz clic en "New SSH key".
+* Asigna un nombre descriptivo a tu clave SSH y pega la clave SSH pública que copiaste en el paso 3 en el campo "Key".
+* Haz clic en "Add SSH key" para agregar la clave SSH a tu cuenta de GitHub.
+* Para verificar que tu clave SSH está configurada correctamente, puedes probarla con el siguiente comando en tu terminal SAP BAS:
+```console
+ssh -T git@github.com
+```
+Si todo está configurado correctamente, deberías ver un mensaje de bienvenida de GitHub.
+
+Ahora estás listo para conectarte a tus repositorios de GitHub desde tu sistema SAP BAS utilizando Git.
 
 ## Operaciones CRUD oData
 Las operaciones CRUD son un acrónimo que representa las cuatro operaciones básicas que se pueden realizar en una base de datos o en cualquier sistema que maneje datos. CRUD significa:
